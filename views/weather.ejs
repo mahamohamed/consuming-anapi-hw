@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <h1>Weather</h1>
+    <form action="/weather" method="POST">
+      <label for="zipCode">Your ZIP Code:</label>
+      <input type="text" id="zipCode" name="zipCode" required />
+      <button type="submit">Get The Weather</button>
+    </form>
+
+    <% if (weather) { %>
+    <h1>Weather in <%= weather.name %></h1>
+    <h2>Temp: <%= weather.temp %> °F</h2>
+    <h2>Des: <%= weather.desc %></h2>
+    <% } if (error) { %>
+    <h2><%= error %></h2>
+    <% } %>
+  </body>
+</html>
